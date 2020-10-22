@@ -8,7 +8,8 @@ const routes: Array<RouteConfig> = [
         name: 'Dashboard',
         component: () => import('@/views/Dashboard.vue'),
         meta: {
-            requiresAuth: true
+            requiresAuth: true,
+            isSinglePage: false
         }
     },
     {
@@ -16,7 +17,8 @@ const routes: Array<RouteConfig> = [
         name: 'Login',
         component: () => import('@/views/Login.vue'),
         meta: {
-            requiresGuest: true
+            requiresGuest: true,
+            isSinglePage: true
         }
     },
     {
@@ -24,7 +26,8 @@ const routes: Array<RouteConfig> = [
         name: 'Register',
         component: () => import('@/views/Register.vue'),
         meta: {
-            requiresGuest: true
+            requiresGuest: true,
+            isSinglePage: true
         }
     }
 ];

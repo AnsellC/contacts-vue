@@ -1,6 +1,6 @@
-import site from '@/constants/site';
 import store from '@/store';
 import axios from 'axios';
+import Vue from 'vue';
 
 type UserLogin = {
     email: string;
@@ -27,14 +27,14 @@ export class User {
             throw new Error('Invalid email/password.');
         }
 
-        return axios.post(`${site.apiUrl}/login`, {
+        return axios.post(`/login`, {
             email: userLogin.email,
             password: userLogin.password
         });
     }
 
     register(userRegister: UserRegister) {
-        return axios.post(`${site.apiUrl}/users`, {
+        return axios.post(`/users`, {
             name: userRegister.name,
             email: userRegister.email,
             password: userRegister.password
@@ -47,7 +47,7 @@ export class User {
         }
         try {
             const result = await axios.post(
-                `${site.apiUrl}/me`,
+                `/me`,
                 {},
                 {
                     headers: {
@@ -65,6 +65,7 @@ export class User {
             });
 
             localStorage.setItem('token', token);
+            Vue.prototype.$axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
         } catch (error) {
             store.dispatch('LOGOUT_ACTION');
             localStorage.removeItem('token');

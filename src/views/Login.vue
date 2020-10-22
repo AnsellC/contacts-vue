@@ -3,6 +3,7 @@
         <v-row>
             <v-col cols="12" md="6" offset-md="3">
                 <v-form @submit.prevent="login()" ref="form">
+                    <div class="pa-4 text-h4 font-weight-bold">Contacts App</div>
                     <v-card class="elevation-0">
                         <v-card-title>
                             Login

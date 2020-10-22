@@ -7,7 +7,9 @@ import { camelCase, upperFirst } from 'lodash';
 import axios from 'axios';
 import config from '@/constants/site';
 import { User } from './models/user';
+import '@/filters';
 
+axios.defaults.baseURL = config.apiUrl;
 Vue.config.productionTip = false;
 Vue.prototype.$axios = axios;
 Vue.prototype.$user = new User();
