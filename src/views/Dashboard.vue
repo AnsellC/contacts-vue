@@ -1,6 +1,6 @@
 <template>
     <div>
-        <span id="test">test</span>
+        <span id="test">{{ $user.name }}</span>
     </div>
 </template>
 

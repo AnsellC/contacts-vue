@@ -1,11 +1,6 @@
 import { Component, Vue } from 'vue-property-decorator';
 import { mapGetters } from 'vuex';
 
-type MessageType = {
-    type: 'error' | 'success' | 'info' | undefined;
-    text: string;
-};
-
 @Component({
     computed: {
         ...mapGetters(['message', 'auth'])

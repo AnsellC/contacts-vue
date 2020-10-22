@@ -6,7 +6,26 @@ const routes: Array<RouteConfig> = [
     {
         path: '/',
         name: 'Dashboard',
-        component: () => import('@/views/Dashboard.vue')
+        component: () => import('@/views/Dashboard.vue'),
+        meta: {
+            requiresAuth: true
+        }
+    },
+    {
+        path: '/login',
+        name: 'Login',
+        component: () => import('@/views/Login.vue'),
+        meta: {
+            requiresGuest: true
+        }
+    },
+    {
+        path: '/register',
+        name: 'Register',
+        component: () => import('@/views/Register.vue'),
+        meta: {
+            requiresGuest: true
+        }
     }
 ];
 
